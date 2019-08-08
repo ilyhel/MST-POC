@@ -1,1 +1,59 @@
-Hello World
+<html>
+
+<head>
+</head>
+
+<body>
+    <iframe>
+        <form>
+            How do you want to display tour page ? <br>
+            <input type="radio" name="feedtype" value="iFrame" onclick="onClick()"> iFrame<br>
+            <input type="radio" name="feedtype" value="Redirect" onclick="onClick()"> Redirect<br><br>
+            Target URL : <br>
+            <input type="text" name="targetURL"><br>
+        </form>
+    </iframe>
+
+    <script src="https://unpkg.com/@microsoft/teams-js@1.4.3/dist/MicrosoftTeams.min.js"
+        integrity="sha384-3eIlLKLlRvFpO327eFF+Hh/I0QpH4BxuCGYVJ9gemIKuaOau32pBPR2sBGoWd2UO"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+        microsoftTeams.initialize();
+        microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
+
+            var radios = document.getElementsByName("feedtype");
+            var targetURL = document.getElementsByName("targetURL")[0].value;
+
+            if (radios[0].checked) {
+                microsoftTeams.settings.setSettings({
+                    contentUrl: "" +
+                        "targetURL=" + encodeURI(targetURL),
+                    suggestedTabName: "iFrame",
+                    websiteUrl: "",
+                    removeUrl: "",
+                    customSettings: ''
+                });
+            } else {
+                microsoftTeams.settings.setSettings({
+                    contentUrl: "" +
+                        "targetURL=" + encodeURI(targetURL),
+                    suggestedTabName: "Redirect",
+                    websiteUrl: "",
+                    removeUrl: "",
+                    customSettings: ''
+                });
+            }
+
+            saveEvent.notifySuccess();
+        });
+
+        function onClick() {
+            microsoftTeams.settings.setValidityState(true);
+        }
+
+    </script>
+
+</body>
+
+</html>
