@@ -4,22 +4,18 @@
 </head>
 
 <body>
-    <form>
-     
-            How do you want to display tour page ? <br>
-            <input type="radio" name="feedtype" value="iFrame" onclick="onClick()"> iFrame<br>
-            <input type="radio" name="feedtype" value="Redirect" onclick="onClick()"> Redirect<br><br>
-            Target URL : <br>
-            <input type="text" name="targetURL"><br>
-      
-    </form>
+   
+    <iframe src="https://www.metalogique.com">
 
+    </iframe>
     <script src="https://unpkg.com/@microsoft/teams-js@1.4.3/dist/MicrosoftTeams.min.js"
         integrity="sha384-3eIlLKLlRvFpO327eFF+Hh/I0QpH4BxuCGYVJ9gemIKuaOau32pBPR2sBGoWd2UO"
         crossorigin="anonymous"></script>
     <script type="text/javascript">
 
         microsoftTeams.initialize();
+        microsoftTeams.settings.setValidityState(true);
+        /*
         microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
 
             var radios = document.getElementsByName("feedtype");
@@ -51,6 +47,8 @@
         function onClick() {
             microsoftTeams.settings.setValidityState(true);
         }
+        */
+        
 
     </script>
 
