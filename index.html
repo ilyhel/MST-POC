@@ -6,52 +6,56 @@
 <body>
    
    
+    <iframe id="myIframe" src="https://www.google.com"  style="height:700px;width:100%;">
+
+    </iframe>
     <script src="https://unpkg.com/@microsoft/teams-js@1.4.3/dist/MicrosoftTeams.min.js"
-        integrity="sha384-3eIlLKLlRvFpO327eFF+Hh/I0QpH4BxuCGYVJ9gemIKuaOau32pBPR2sBGoWd2UO"
-        crossorigin="anonymous"></script>
-    <script type="text/javascript">
-
-        microsoftTeams.initialize();
-        microsoftTeams.settings.setValidityState(true);
-        /*
-        microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
-
-            var radios = document.getElementsByName("feedtype");
-            var targetURL = document.getElementsByName("targetURL")[0].value;
-
-            if (radios[0].checked) {
-                microsoftTeams.settings.setSettings({
-                    contentUrl: "" +
-                        "targetURL=" + encodeURI(targetURL),
-                    suggestedTabName: "iFrame",
-                    websiteUrl: "",
-                    removeUrl: "",
-                    customSettings: ''
-                });
-            } else {
-                microsoftTeams.settings.setSettings({
-                    contentUrl: "" +
-                        "targetURL=" + encodeURI(targetURL),
-                    suggestedTabName: "Redirect",
-                    websiteUrl: "",
-                    removeUrl: "",
-                    customSettings: ''
-                });
-            }
-
-            saveEvent.notifySuccess();
-        });
-
-        function onClick() {
+            integrity="sha384-3eIlLKLlRvFpO327eFF+Hh/I0QpH4BxuCGYVJ9gemIKuaOau32pBPR2sBGoWd2UO"
+            crossorigin="anonymous"></script>
+        <script type="text/javascript">
+    
+            microsoftTeams.initialize();
             microsoftTeams.settings.setValidityState(true);
-        }
-        */
-        
-
-    </script>
+            var targetURL = decodeURI(getParameterByName('https://www.google.com'));
+    
+              document.getElementById('myIframe').src = targetURL ;
+            /*
+            microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
+    
+                var radios = document.getElementsByName("feedtype");
+                var targetURL = document.getElementsByName("targetURL")[0].value;
+    
+                if (radios[0].checked) {
+                    microsoftTeams.settings.setSettings({
+                        contentUrl: "" +
+                            "targetURL=" + encodeURI(targetURL),
+                        suggestedTabName: "iFrame",
+                        websiteUrl: "",
+                        removeUrl: "",
+                        customSettings: ''
+                    });
+                } else {
+                    microsoftTeams.settings.setSettings({
+                        contentUrl: "" +
+                            "targetURL=" + encodeURI(targetURL),
+                        suggestedTabName: "Redirect",
+                        websiteUrl: "",
+                        removeUrl: "",
+                        customSettings: ''
+                    });
+                }
+    
+                saveEvent.notifySuccess();
+            });
+    
+            function onClick() {
+                microsoftTeams.settings.setValidityState(true);
+            }
+            */
+            
+    
+        </script>
 
 </body>
-<iframe src="https://www.google.com"  style="height:700px;width:100%;">
 
-</iframe>
 </html>
