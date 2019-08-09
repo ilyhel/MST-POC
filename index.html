@@ -37,6 +37,7 @@
        microsoftTeams.getTabInstances(function(tabs){
         alert(JSON.stringify(tabs))
         document.getElementById('infos').textContent  = JSON.stringify(tabs);
+         document.getElementById('myframe').src = "https://www.google.com";
         /*
         microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
             alert("settings")
