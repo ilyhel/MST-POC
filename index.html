@@ -4,8 +4,13 @@
 </head>
 
 <body>
-   
+   <form>
+       <textarea id="infos" aria-valuetext="">
+
+       </textarea>
+   </form>
    NO CONTENTUrl //
+
    
     <script src="https://unpkg.com/@microsoft/teams-js@1.4.3/dist/MicrosoftTeams.min.js"
             integrity="sha384-3eIlLKLlRvFpO327eFF+Hh/I0QpH4BxuCGYVJ9gemIKuaOau32pBPR2sBGoWd2UO"
@@ -17,6 +22,8 @@
             microsoftTeams.getContext(function (ctx) {
        // Do very important stuff and redirect to the next page
        alert(JSON.stringify(ctx))
+       document.getElementById('infos')[0].value = JSON.stringify(ctx);
+       
     });
 
             //var targetURL = decodeURI('https://www.google.com');
