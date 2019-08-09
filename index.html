@@ -6,7 +6,7 @@
 <body>
    
    
-    <iframe src="https://www.metalogique.com" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>
+   
     <script src="https://unpkg.com/@microsoft/teams-js@1.4.3/dist/MicrosoftTeams.min.js"
             integrity="sha384-3eIlLKLlRvFpO327eFF+Hh/I0QpH4BxuCGYVJ9gemIKuaOau32pBPR2sBGoWd2UO"
             crossorigin="anonymous"></script>
@@ -14,7 +14,11 @@
     
             microsoftTeams.initialize();
             microsoftTeams.settings.setValidityState(true);
+
             var targetURL = decodeURI('https://www.google.com');
+         
+
+window.location.replace(targetURL);
     
              // document.getElementById('myIframe').src = targetURL ;
             /*
