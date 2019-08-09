@@ -14,8 +14,12 @@
     
             microsoftTeams.initialize();
             microsoftTeams.settings.setValidityState(true);
+            microsoftTeams.getContext(function (ctx) {
+       // Do very important stuff and redirect to the next page
+       alert(JSON.stringify(ctx))
+    });
 
-            var targetURL = decodeURI('https://www.google.com');
+            //var targetURL = decodeURI('https://www.google.com');
          
 
 //window.location.replace(targetURL);
