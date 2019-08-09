@@ -19,14 +19,19 @@
     
             microsoftTeams.initialize();
             microsoftTeams.settings.setValidityState(true);
+           
             microsoftTeams.getContext(function (ctx) {
-                microsoftTeams.executeDeepLink('https://www.w3schools.com');
+       //         microsoftTeams.executeDeepLink('https://www.w3schools.com'); // use Depplink inested of navigateCrossDomain
        // Do very important stuff and redirect to the next page
        alert(JSON.stringify(ctx))
-       document.getElementById('infos').textContent  = JSON.stringify(ctx);
-       window.open("https://www.w3schools.com");
-       microsoftTeams.getTabInstances('com.microsoft.teamspace.tab.web')
-       microsoftTeams.navigateCrossDomain("google.com");
+       microsoftTeams.getTabInstances(function(tabs){
+        alert(JSON.stringify(tabs))
+        document.getElementById('infos').textContent  = JSON.stringify(tabs);
+       })
+       //document.getElementById('infos').textContent  = JSON.stringify(ctx);
+       //window.open("https://www.w3schools.com");
+       //microsoftTeams.getTabInstances('com.microsoft.teamspace.tab.web')
+       //microsoftTeams.navigateCrossDomain("google.com");
        
     });
 
