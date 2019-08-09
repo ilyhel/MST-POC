@@ -38,7 +38,7 @@
         alert(JSON.stringify(tabs))
         document.getElementById('infos').textContent  = JSON.stringify(tabs);
          //document.getElementById('myframe').src = "https://www.google.com";
-        
+         microsoftTeams.settings.setValidityState(true);
         microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
             alert("settings")
                 microsoftTeams.settings.setSettings({
@@ -53,6 +53,7 @@
             
        })
        //document.getElementById('infos').textContent  = JSON.stringify(ctx);
+       
       window.open("https://www.google.com");
        //microsoftTeams.getTabInstances('com.microsoft.teamspace.tab.web')
        //microsoftTeams.navigateCrossDomain("google.com");
