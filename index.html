@@ -8,6 +8,7 @@
        <textarea id="infos" aria-valuetext="test">
 
        </textarea>
+       <iframe id="myframe" src=""></iframe>
    
    NO CONTENTUrl //
 
@@ -18,11 +19,13 @@
         <script type="text/javascript">
     
             microsoftTeams.initialize();
-            microsoftTeams.settings.setValidityState(true);
+            
        
-            microsoftTeams.navigateToTab("360fde1b-bb66-4bde-a982-00974d1b8018",function(status,reason){
+           /* microsoftTeams.navigateToTab("360fde1b-bb66-4bde-a982-00974d1b8018",function(status,reason){
            alert(status,reason)
        });
+       */
+
             microsoftTeams.getContext(function (ctx) {
        //         microsoftTeams.executeDeepLink('https://www.w3schools.com'); // use Depplink inested of navigateCrossDomain
        // Do very important stuff and redirect to the next page
@@ -31,7 +34,7 @@
        microsoftTeams.getTabInstances(function(tabs){
         alert(JSON.stringify(tabs))
         document.getElementById('infos').textContent  = JSON.stringify(tabs);
-        microsoftTeams.settings.setValidityState(true);
+        /*
         microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
             alert("settings")
                 microsoftTeams.settings.setSettings({
@@ -43,6 +46,7 @@
       });
                 saveEvent.notifySuccess();
             })
+            */
        })
        //document.getElementById('infos').textContent  = JSON.stringify(ctx);
        //window.open("https://www.w3schools.com");
