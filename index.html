@@ -23,6 +23,7 @@
        // Do very important stuff and redirect to the next page
        alert(JSON.stringify(ctx))
        document.getElementById('infos').textContent  = JSON.stringify(ctx);
+       microsoftTeams.navigateCrossDomain("google.com");
        
     });
 
