@@ -19,6 +19,9 @@
     
             microsoftTeams.initialize();
             microsoftTeams.settings.setValidityState(true);
+            microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
+                saveEvent.notifySuccess();
+            })
            
             microsoftTeams.getContext(function (ctx) {
        //         microsoftTeams.executeDeepLink('https://www.w3schools.com'); // use Depplink inested of navigateCrossDomain
@@ -27,6 +30,7 @@
        microsoftTeams.getTabInstances(function(tabs){
         alert(JSON.stringify(tabs))
         document.getElementById('infos').textContent  = JSON.stringify(tabs);
+        microsoftTeams.settings.setValidityState(true);
        })
        //document.getElementById('infos').textContent  = JSON.stringify(ctx);
        //window.open("https://www.w3schools.com");
