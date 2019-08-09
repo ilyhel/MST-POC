@@ -1,107 +1,49 @@
 <html>
 
 <head>
-        <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
-        <meta http-equiv="Content-Security-Policy" content="frame-ancestors teams.microsoft.com *.teams.microsoft.com *.skype.com">
-        
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+    <meta http-equiv="Content-Security-Policy"
+        content="frame-ancestors teams.microsoft.com *.teams.microsoft.com *.skype.com">
+
 </head>
 
 <body>
-   
-       <textarea id="infos" aria-valuetext="test">
 
-       </textarea>
-       <iframe id="myframe" src=""></iframe>
-   
-   NO CONTENTUrl //
 
-   
+
+    Vous seriez rediriger vers www.metalogique.com
+
+
     <script src="https://unpkg.com/@microsoft/teams-js@1.4.3/dist/MicrosoftTeams.min.js"
-            integrity="sha384-3eIlLKLlRvFpO327eFF+Hh/I0QpH4BxuCGYVJ9gemIKuaOau32pBPR2sBGoWd2UO"
-            crossorigin="anonymous"></script>
-        <script type="text/javascript">
-    
-            microsoftTeams.initialize();
-            
-       
-           /* microsoftTeams.navigateToTab("360fde1b-bb66-4bde-a982-00974d1b8018",function(status,reason){
-           alert(status,reason)
-       });
-       */
+        integrity="sha384-3eIlLKLlRvFpO327eFF+Hh/I0QpH4BxuCGYVJ9gemIKuaOau32pBPR2sBGoWd2UO"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
 
-            microsoftTeams.getContext(function (ctx) {
-                //microsoftTeams.executeDeepLink('https://www.google.com'); // use Depplink inested of navigateCrossDomain
-       // Do very important stuff and redirect to the next page
-       alert(JSON.stringify(ctx))
-     
-       microsoftTeams.getTabInstances(function(tabs){
-        alert(JSON.stringify(tabs))
-        document.getElementById('infos').textContent  = JSON.stringify(tabs);
-         //document.getElementById('myframe').src = "https://www.google.com";
-         microsoftTeams.settings.setValidityState(true);
-        microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
-            alert("settings")
+        microsoftTeams.initialize();
+
+        microsoftTeams.getContext(function (ctx) {
+
+
+            microsoftTeams.settings.setValidityState(true);
+            microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
                 microsoftTeams.settings.setSettings({
-         contentUrl: "https://ilyhel.github.io/MST-POC/" ,
-         suggestedTabName: "testmysite",
-         websiteUrl: "https://ilyhel.github.io/MST-POC/",
-         removeUrl: "https://ilyhel.github.io/MST-POC/",
-         customSettings: ''
-      });
+                    contentUrl: "https://ilyhel.github.io/MST-POC/",
+                    suggestedTabName: "testmysite",
+                    websiteUrl: "https://ilyhel.github.io/MST-POC/",
+                    removeUrl: "https://ilyhel.github.io/MST-POC/",
+                    customSettings: ''
+                });
                 saveEvent.notifySuccess();
             })
-            
-       })
-       //document.getElementById('infos').textContent  = JSON.stringify(ctx);
-       
-      window.open("https://www.google.com");
-       //microsoftTeams.getTabInstances('com.microsoft.teamspace.tab.web')
-       //microsoftTeams.navigateCrossDomain("google.com");
-       
-    });
 
-            //var targetURL = decodeURI('https://www.google.com');
-         
+            window.open("https://www.metalogique.com");
 
-//window.location.replace(targetURL);
-    
-             // document.getElementById('myIframe').src = targetURL ;
-            /*
-            microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
-    
-                var radios = document.getElementsByName("feedtype");
-                var targetURL = document.getElementsByName("targetURL")[0].value;
-    
-                if (radios[0].checked) {
-                    microsoftTeams.settings.setSettings({
-                        contentUrl: "" +
-                            "targetURL=" + encodeURI(targetURL),
-                        suggestedTabName: "iFrame",
-                        websiteUrl: "",
-                        removeUrl: "",
-                        customSettings: ''
-                    });
-                } else {
-                    microsoftTeams.settings.setSettings({
-                        contentUrl: "" +
-                            "targetURL=" + encodeURI(targetURL),
-                        suggestedTabName: "Redirect",
-                        websiteUrl: "",
-                        removeUrl: "",
-                        customSettings: ''
-                    });
-                }
-    
-                saveEvent.notifySuccess();
-            });
-    
-            function onClick() {
-                microsoftTeams.settings.setValidityState(true);
-            }
-            */
-            
-    
-        </script>
+
+        });
+
+
+
+    </script>
 
 </body>
 
