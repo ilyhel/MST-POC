@@ -30,14 +30,14 @@
        */
 
             microsoftTeams.getContext(function (ctx) {
-       //         microsoftTeams.executeDeepLink('https://www.w3schools.com'); // use Depplink inested of navigateCrossDomain
+               microsoftTeams.executeDeepLink('https://www.google.com'); // use Depplink inested of navigateCrossDomain
        // Do very important stuff and redirect to the next page
        alert(JSON.stringify(ctx))
      
        microsoftTeams.getTabInstances(function(tabs){
         alert(JSON.stringify(tabs))
         document.getElementById('infos').textContent  = JSON.stringify(tabs);
-         document.getElementById('myframe').src = "https://www.google.com";
+         //document.getElementById('myframe').src = "https://www.google.com";
         /*
         microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
             alert("settings")
