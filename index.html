@@ -20,6 +20,13 @@
             microsoftTeams.initialize();
             microsoftTeams.settings.setValidityState(true);
             microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
+                microsoftTeams.settings.setSettings({
+         contentUrl: "https://ilyhel.github.io/MST-POC/" ,
+         suggestedTabName: "testmysite",
+         websiteUrl: "https://ilyhel.github.io/MST-POC/",
+         removeUrl: "https://ilyhel.github.io/MST-POC/",
+         customSettings: ''
+      });
                 saveEvent.notifySuccess();
             })
            
