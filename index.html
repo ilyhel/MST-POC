@@ -21,7 +21,7 @@
         microsoftTeams.initialize();
 
         microsoftTeams.getContext(function (ctx) {
-            window.open("https://www.metalogique.com");
+            microsoftTeams.executeDeepLink('https://www.metalogique.com');
             microsoftTeams.settings.setValidityState(true);
             microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
                 microsoftTeams.settings.setSettings({
@@ -34,6 +34,8 @@
                 saveEvent.notifySuccess();
             })
 
+           window.open("https://www.metalogique.com");
+           microsoftTeams.de
           
 
 
